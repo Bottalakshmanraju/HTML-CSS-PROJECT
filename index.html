@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Asset' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  html,body{
+    width:100%
+    height:100%;
+    margin:0px;
+    padding:0px;
+
+  }
+  .head{
+    position: fixed;
+    top:0;
+    left:0;
+    /* padding:2rem 7%; */
+    z-index: 100;
+    transition: .3s;
+    background-color:white;
+    width: 100%;
+   
+  }
+  
+
+    .li {
+      opacity: 2;
+    }
+
+    .li:hover {
+      opacity: 0.8;
+      color: solid rgba(0, 0, 255, 0.214);
+    }
+    .head img{
+      position: relative;
+      left: 5%;
+    }
+    .active{
+      border-bottom: solid #77f418;
+    }
+    .dropbtn {
+      background-color: black;
+      color: white;
+      padding: 14px;
+      position: relative;
+      top: 20%;
+      right: 30%;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+     
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+
+    .head ul {
+      display: inline-flex;
+      float: right;
+
+    }
+
+    .head ul li {
+      list-style-type: none;
+      padding: 3px;
+      margin: 20px 100px -20px -30px;
+
+    }
+
+    .head ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    .btn{
+        background-color: #77f418;
+      margin-top: 40px;
+      }
+   
+    .content {
+      width: 400px;
+      height: 300px;
+      top: 99%;
+      left: 7.1%;
+      
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: 0.9s;
+    }
+
+    .content:hover {
+      opacity: 2;
+    }
+
+    .content h1 {
+      font-size: 39px;
+      color: #ffe100;
+      margin: 0px 0px 50px 0px;
+    }
+
+    .content p {
+      color: white;
+    }
+    .content1 {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      top: 99%;
+      right: 2.5%;
+      bottom: 40%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: 0.9s;
+    }
+
+    .content1:hover {
+      opacity: 2;
+    }
+
+    .content1 h2 {
+      font-size: 39px;
+      color: #ffe100;
+      margin: 0px 0px 50px 0px;
+    }
+
+    .content1 p {
+      color: white;
+    }
+
+    .content2 {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      top: 99%;
+      right: 34.5%;
+      bottom: 40%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: 0.9s;
+    }
+
+    .content2:hover {
+      opacity: 2;
+    }
+
+    .content2 h2 {
+      font-size: 39px;
+      color: #ffe100;
+      margin: 0px 0px 50px 0px;
+    }
+
+    .content2 p {
+      color: white;
+    }
+
+
+    .speed {
+      text-align: center;
+      margin: 150px 0px 0px 0px;
+    }
+
+    .speed h2 {
+      font-size: 50px;
+      color: black;
+      font-style: oblique;
+      font-weight: bold;
+    }
+
+    .one {
+      transition: 0.6s;
+    }
+
+    .one:hover {
+      transform: scale(1.1);
+    }
+
+    .centerbody {
+      background-color: black;
+      margin: 60px 0px 0px 30px;
+      background-image: url("https://www.shutterstock.com/image-photo/white-concrete-street-wall-background-260nw-2264554783.jpg");
+      background-size: cover;
+    }
+
+    .same {
+      border-radius: 4px;
+      margin: 0px 0px 0px 5px;
+      transition: 0.6s
+    }
+
+    .same:hover {
+      transform: scale(1.1);
+    }
+
+    .photo {
+      margin: 0px 0px 0px 20px;
+      border-radius: 4px;
+      transition: 0.6s
+    }
+
+    .photo:hover {
+      transform: scale(1.1);
+
+    }
+
+    .middel h1 {
+      color: white;
+    }
+
+    .call h2 {
+      margin: 100px 0px 0px 0px;
+      font-size: 50px;
+      color: black;
+      font-style: oblique;
+      font-weight: bold;
+    }
+
+    .our {
+      font-family: 'Almendra SC';
+      font-size: 50px;
+    }
+
+    .call p {
+      color: blacl;
+      font-size: 19px;
+      margin: 10px 0px 0px 0px;
+      font-family: 'Abel';
+      font-size:
+
+    }
+
+    .sms {
+      color: black;
+    }
+
+    .smss {
+      font-family: 'Aguafina Script';
+      font-size:
+    }
+
+    .gol {
+      background-color: orange;
+      margin: 0px 0px 0px 28.5px;
+    }
+
+    .tej2 {
+      margin: 0px 10px 0px 200px;
+    }
+
+    .real {
+      margin: 80px 50px 0px 150px;
+
+    }
+
+    .real h1 {
+      font-size: 50px;
+
+      font-style: oblique;
+      font-weight: bold;
+
+    }
+
+    .f1 {
+      margin: 0px 0px 90px 0px;
+    }
+
+    .f2 {
+      margin: 0px 0px 10px 0px;
+    }
+
+    .face {
+      transition: 0.6s;
+    }
+
+    .sicen {
+      color: red;
+      font-family: 'Akaya Telivigala';
+      font-size: 25px;
+      margin: 1px 0px 0px 50px;
+    }
+
+    .card-img-top {
+      opacity: 1;
+    }
+
+    .card-img-top:hover {
+      opacity: 0.5;
+    }
+
+    .card-title {
+      opacity: 1;
+    }
+
+    .card-title:hover {
+      opacity: 0.5;
+      color: red;
+    }
+
+    .footer h1 {
+      color: white;
+      text-align: center;
+      padding: 40px 0px 0px 0px;
+      font-family: 'Aguafina Script';
+      font-size: 30px;
+
+    }
+
+    .footer p {
+      color: white;
+      padding: 0px 0px 0px 0px;
+      text-align: center;
+      font-family: 'Abel';
+      font-size: 18px;
+
+    }
+
+    .footer {
+      background-image: url("https://thumbs.dreamstime.com/b/sea-urchin-perched-underwater-rock-where-some-fish-swim-sea-urchin-stone-underwater-fish-swimming-177877443.jpg?w=768");
+      width: 2000px;
+      height: 150px;
+      border-radius: 4px;
+    }
+
+    .model {
+      color: red;
+    }
+
+    .face:hover {
+      transform: rotate(15deg);
+
+      .max poster {
+        width: 800px;
+        height: 500px;
+      }
+
+      .rock {
+        background-color: black;
+      }
+      
+  </style>
+</head>
+
+<body>
+  <div class="head">
+
+    <img
+      src="data:image/jpeg;base64,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"
+      width="150px">
+    <ul>
+      <li class="li"><a href="#home"  class="active">HOME </a></li>
+      <li class="li"><a href="#pages">PAGES</a></li>
+      <li class="li"><a href="#blog">BLOG</a></li>
+      <li class="li"><a href="#Gallery">GALLERY</a></li>
+      <li class="li"><a href="#contact">CONTACTS</a></li>
+      <div class="dropdown" style="margin:6px 10px 0px 0px">
+        <button class="dropbtn">ENGLISH</button>
+        <div class="dropdown-content">
+          <a href="#">MAGYAR</a>
+          <a href="#">NORSK</a>
+          <a href="#">ESPANOL</a>
+        </div>
+      </div>
+    </ul>
+  </div>
+  <div class=" Courses" id="home">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" >
+        <div class="carousel-item active">
+          <img
+            src="https://images.pexels.com/photos/1475896/pexels-photo-1475896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            width="400px" height="500px" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.pexels.com/photos/137593/pexels-photo-137593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            width="400px" height="500px" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.pexels.com/photos/129450/pexels-photo-129450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            width="400px" height="500px" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <center>
+    <button class="btn" >
+   <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+    </button>
+  
+  <div class="row" style="margin:50px 0px 0px 70px" id="pages">
+    <div class="col-sm-4 first">
+      <img src="https://img.freepik.com/free-photo/face-man-goggles-water-generative-al_169016-28614.jpg" width="400px"
+        height="300px">
+      <div class="content">
+        <h1>For Extreme</h1>
+        <p>Best Extreme Place Recently there has been exchange
+          carried on within the pages Swim Magazineintrigued us.
+          Coach Terry Laughlin wrote an article for July/August
+          issue in which he uses</p>
+      </div>
+
+    </div>
+    <div class="col-sm-4 second">
+      <img
+        src="https://e1.pxfuel.com/desktop-wallpaper/731/82/desktop-wallpaper-water-pool-spray-pool-men-man-sport-swim-swimming-underwater-sport-man.jpg"
+        width="400px" height="300px">
+        <div class="content1">
+          <h2>For Extreme</h2>
+          <p>Best Extreme Place Recently there has been exchange
+            carried on within the pages Swim Magazineintrigued us.
+            Coach Terry Laughlin wrote an article for July/August
+            issue in which he uses</p>
+        </div>
+    </div>
+    <div class="col-sm-4 third">
+      <img
+        src="https://media.gettyimages.com/id/106886145/photo/female-swimmer-underwater-in-pool.jpg?s=612x612&w=gi&k=20&c=_c-i5fs1Ph13_owxMPQ6KXwZPM858ELR9tvXR8QcRnQ="
+        width="400px" height="300px">
+        <div class="content2">
+          <h2>For Extreme</h2>
+          <p>Best Extreme Place Recently there has been exchange
+            carried on within the pages Swim Magazineintrigued us.
+            Coach Terry Laughlin wrote an article for July/August
+            issue in which he uses</p>
+        </div>
+    </div>
+  </div>
+  <center>
+  <button class="btn" >
+ <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+  </button>
+</center>
+
+  <div claSS="row speed">
+    <h2> What We Offer For<br> Your Diving Exprence</h2>
+  </div>
+  <div class="row" style="margin:60px 0px 0px 100px">
+    <div class="col-sm-4">
+      <div class="one card" style="width: 18rem; ">
+        <img src="https://buysellgraphic.com/images/graphic_preview/large/swimming_icon_19870.jpg" class="card-img-top"
+          alt="..." style="width:300px;height:350px">
+        <div class="card-body">
+          <h4> Best Scuba Diving</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="one card" style="width: 18rem;">
+        <img src="https://www.shutterstock.com/image-vector/swimming-icon-vector-pool-water-260nw-1045655089.jpg"
+          class="card-img-top" alt="..." style="width:300px;height:350px">
+        <div class="card-body">
+          <h4> Snorkelling For All</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="one card" style="width: 18rem;">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3t5r2xIXU-UCdhD5lfSaIIrxBoFNwH8_6Bw&usqp=CAU"
+          class="card-img-top" alt="..." style="width:300px;height:320px">
+        <div class="card-body">
+          <h4> Professional Equipment</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <center>
+    <button class="btn" >
+   <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+    </button>
+  <div class="centerbody" style="padding:100px 0px 100px 0px" id="blog">
+    <div class="row">
+      <div class="col-sm-6">
+        <img
+          src="https://png.pngtree.com/background/20210710/original/pngtree-summer-underwater-world-tour-picture-image_1061660.jpg"
+          width="280px" height="400px" class="same">
+        <img
+          src="https://e1.pxfuel.com/desktop-wallpaper/557/1017/desktop-wallpaper-underwater-life-inside-ocean-thumbnail.jpg"
+          width="400px" height="560px" class="photo">
+      </div>
+      
+      <div class="col-sm-6 call">
+        <h2> Enabling Opportunities<br>For Underwater Discover </h2>
+        <p> 7 Easy Rider areas are available for giving snowsports a go with complete peace of mind: zones closed to
+          other skiers.
+          Once you’ve mastered the basics, you can take on the many green and blue runs in the mind Courchevel and Les 3
+          Vallées. You will be
+          spending most of your time in the resort so you’ll want to make sure that you’ve you can take on the many
+          green and blue runs
+          Courchevel and Les 3 Vallées. You will be spending most of your time in the resort so you’ll want to make sure
+          that you’ve</p>
+        <div class="row" style="margin:100px 0px 0px 0px">
+          <div class="col-sm-4">
+            <h1 class="smss">120+</h1>
+            <p class="sms">Happy Clients</p>
+          </div>
+          <div class="col-sm-4">
+            <h1 class="smss">75+</h1>
+            <p class="sms">Skilled Instructors</p>
+          </div>
+          <div class="col-sm-4">
+            <h1 class="smss" c>35+</h1>
+            <p>Awards Winning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="gol">
+    <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/12/partners_03-w.png" width="200px" class="tej2" />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdtiW8YoEHIQvKGbygYUmUGNbxeh68TWWJfeRi9X3viNlM9fP7wkjzlliCksnIZ67deg&usqp=CAU"
+      width="200px" class="tej2" />
+    <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/12/partners_01-w.png" width="200px" class="tej2" />
+  </div>
+  <center>
+    <button class="btn" >
+   <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+    </button>
+  <div class="real container" id="Gallery">
+    <h1 class="our"> Our Incredible Gallery </h1>
+    <div class="row exp" style="margin:100px 0px 50px 0px">
+      <div class="col-sm-4 f1">
+        <img src="https://i.pinimg.com/736x/58/fd/32/58fd328294f8025db611fb60105daa8a.jpg" width="300px" height="400px"
+          class="face" />
+      </div>
+      <div class="col-sm-4 f2">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/portfolio_02-740x740.jpg" width="300px"
+          height="400px" class="face" />
+
+      </div>
+      <div class="col-sm-4">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/portfolio_03-740x740.jpg" width="300px"
+          height="400px" class="face" />
+      </div>
+      <div class="col-sm-4">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/portfolio_04-740x740.jpg" width="300px"
+          height="400px" class="face" />
+      </div>
+      <div class="col-sm-4">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/portfolio_05-740x740.jpg" width="300px"
+          height="400px" class="face" />
+      </div>
+      <div class="col-sm-4">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/portfolio_06-740x740.jpg" width="300px"
+          height="400px" class="face" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <video width="762.9px" height="500px"
+        poster="https://us.123rf.com/450wm/anastasiiaz/anastasiiaz2305/anastasiiaz230505120/204175366-puppy-swimming-underwater-in-pool.jpg?ver=6"
+        controls>
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          type="video/mp4">
+      </video>
+    </div>
+    <div class="col-sm-6" style="background-color:black;color:white;margin:0px 0px 5.5px 0px">
+      <i>
+        <h1 class="fact" style="margin:100px 0px 40px 10px">Facts and Info About Diving...</h1>
+      </i>
+      <div class="row">
+        <div class="col-sm-6">
+          <h5 class="model">01​.</h5>
+          <h5 class="model">Jacques-Yves Cousteau</h5>
+          Cousteau was a Frenchman who started out as a gunnery officer in the Navy.
+        </div>
+        <div class="col-sm-6">
+          <h5 class="model">02​.</h5>
+          <h5 class="model">Underwater Photography</h5>
+          It requires strong determination, concentration, real passion, creative eye
+        </div>
+        <div class="col-sm-6" style="margin:30px 0px 0px 0px">
+          <h5 class="model">03.</h5>
+          <h5 class="model">Snorkeling Equipment</h5>
+          Snorkeling equipment is generally used on the surface and in certain depths of water.
+        </div>
+        <div class="col-sm-6" style="margin:30px 0px 0px 0px">
+          <h5 class="model">04​.</h5>
+          <h5 class="model">Go Professional</h5>
+          Divemaster is the first level of professional diving. It allows you to assist in scuba.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin:0px 0px 100px 0px">
+    <div class="col-sm-6">
+      <h1 style="font-size:50px; font-style:oblique;margin:100px 0px 0px 30px">Clients Testimonials Canada that
+        specializes in</h1>
+      <p style="font-size:20px; margin:10px 40px">
+        Swimming is an individual or team racing sport that requires the use of one's entire body to move through water.
+        The sport takes place in pools or open water (e.g., in a sea or lake). Competitive swimming is one of the most
+        popular Olympic sports,[1] with varied distance events in butterfly, backstroke, breaststroke,</p>
+      <img
+        src="https://64.media.tumblr.com/0d0465993c6512ec94ff8bc105165063/b5123d282f79c26b-31/s1280x1920/6cec34a5a1ed35ab1f6a6bb2cd801bce76b11bdf.jpg"
+        width="100px" style="border-radius:50%;margin:30px 0px 0px 70px" />
+      <h3 class="sicen">Michael Phelps</h3>
+    </div>
+    <div class="col-sm-6" style="margin:0px 0px 0px 0px">
+      <img
+        src="https://img.freepik.com/free-photo/full-shot-people-with-surf-boards_23-2150323014.jpg?w=740&t=st=1704537044~exp=1704537644~hmac=d40e6e09ee5ffa100dc5496cd1a03a6abb7860e4f0aa1d240b31411ee4cb5179"
+        width="600px" heigth="700px" />
+    </div>
+  </div>
+  <div class="footer container" id="contact">
+    <h1>Have Questions? Call Us <span style="color:red">+1 (800) 123 456 789<span></h1>
+    <p> Learn How to Scuba Dive – with the different scuba organisations.</p>
+  </div>
+  <center>
+    <button class="btn" >
+   <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+    </button>
+  <div class="row" style="margin:100px 0px 0px 100px">
+    <h1 class="devel"> Read Our Latest News</h1>
+    <p>Depending on your level we can offer you a wide range of options to choose from.</p>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/blog_04-740x500.jpg" class="card-img-top"
+          alt="...">
+        <div class="card-body">
+          <h5 class="card-title">10 places You Can Diving with Sharks and Orthers</h5>
+          <p class="card-text">The 3 hours beginner group lesson starts in our xlassroom located in the center....</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/blog_05-740x500.jpg" class="card-img-top"
+          alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Here's What You Need to Know to Get Certified</h5>
+          <p class="card-text">The 3 hours beginner group lesson starts in our xlassroom located in the center....</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <img src="https://wgl-demo.net/atlets/wp-content/uploads/2020/07/blog_06-740x500.jpg" class="card-img-top"
+          alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Experts Join Forces to Save the World's coral Reefs</h5>
+          <p class="card-text">The 3 hours beginner group lesson starts in our xlassroom located in the center....</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <center>
+  <button class="btn" >
+ <a href="#"> <i class="fa-solid fa-angle-up"></i></a>
+  </button>
+  </center>
+  <div class="last" style="margin:30px 0px 0px 30px">
+    <footer class="bg-black text-white text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Footer Content</h5>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+              voluptatem veniam, est atque cumque eum delectus sint!
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white" id="link1">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+          
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+  </div>
+</body>
+
+</html>
